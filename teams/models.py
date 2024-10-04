@@ -8,6 +8,9 @@ User = get_user_model()
 
 class Team(TimeStampedModel):
     name = models.CharField(max_length=100, unique=True)
+    team_leader = models.ForeignKey(
+        User, on_delete=models.RESTRICT, null=True, related_name='team_leader', verbose_name='Team Leader'
+    )
     members = models.ManyToManyField(
         User,
         related_name='teams',
@@ -22,7 +25,7 @@ class Team(TimeStampedModel):
         ordering = ('name',)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} ({self.pk})'
 
 
 class Member(models.Model):
@@ -42,3 +45,7 @@ class Member(models.Model):
 
     def __str__(self):
         return f"{self.user.username} in {self.team.name}"
+
+    @property
+    def is_team_leader(self):
+        return self.user == self.team.team_leader
