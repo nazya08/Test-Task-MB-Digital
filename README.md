@@ -8,7 +8,7 @@ Here's how to get the project up and running using Docker and Docker Compose wit
 1. Clone this repository:
 
     ```bash
-    git clone git@github.com:nazya08/vpn_service_SheepFish.git
+    git clone git@github.com:nazya08/Test-Task-MB-Digital.git
     ```
 
 2. Copy `.env` file and fill environment variables:
@@ -41,7 +41,7 @@ Here's how to get the project up and running using Poetry locally.
 1. Clone this repository:
 
     ```bash
-    git clone git@github.com:nazya08/vpn_service_SheepFish.git
+    git clone git@github.com:nazya08/Test-Task-MB-Digital.git
     ```
 
 2. Copy `.env` file and fill environment variables:
