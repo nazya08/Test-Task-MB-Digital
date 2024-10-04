@@ -30,6 +30,7 @@ INSTALLED_APPS = [
 # apps
 INSTALLED_APPS += [
     'api',
+    'common',
     'users',
     'teams',
 ]
@@ -42,6 +43,7 @@ INSTALLED_APPS += [
     'rest_framework_simplejwt',
     'drf_spectacular',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -139,7 +141,7 @@ SPECTACULAR_SETTINGS = {
     ],
 
     'SERVE_AUTHENTICATION': [
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        # 'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ],
 
@@ -211,3 +213,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_HEADERS = ['*']
 CSRF_COOKIE_SECURE = False
+
+
+# Custom user model
+AUTH_USER_MODEL = 'users.User'
